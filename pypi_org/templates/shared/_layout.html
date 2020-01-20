@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/site.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+
+<!-- HTML5 version nav
+    <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav> -->
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-expand-md">
+    <a class="navbar-brand" href="/"><img src="/static/img/pypi-logo.svg"/></a>
+
+    <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+            data-target="#navbarSupportContent"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- div.navbar-toggler-icon>div.nav-expand-line*3 -->     
+        <div class="navbar-toggler-icon">
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+        </div>
+    </button>
+
+    <!-- div.collapse.navbar-collapse#navbarSupportedContent>ul.navbar-nav.ml-auto>li.nav-item*4>a.nav-link -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#" class="nav-link">Donate</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
+            <li class="nav-item"><a href="/account/login" class="nav-link">Login</a></li>
+            <li class="nav-item"><a href="/account/register" class="nav-link" id="last_nav_link">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="main_content">
+
+    {% block main_content %}No content{% endblock %}
+</div>
+
+<footer>
+    <div class="copyright">
+        This is a fake site built during a course.<br>
+        It's meant to model / simulate the real <a href="https://pypi.org">pypi.org</a><br>
+        <br>
+        Copyright &copy; <a href="http://wilkins.in">Brent Wilkins?</a>
+    </div>
+</footer>
+
+<script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous">
+</script>
+<script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous">
+</script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous">
+</script>
+{% block additional_js %}{% endblock %}
+
+</body>
+</html>
